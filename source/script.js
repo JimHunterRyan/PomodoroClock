@@ -1,44 +1,6 @@
-/*var mins = 25;
-var secs=0;
-var seconds=0;
-this.document.getElementById("display").innerHTML = mins + " minutes";
-
-
-function increment() {
-    seconds=0;
-  mins++;
-  
-  this.document.getElementById("display").innerHTML = mins + " minutes";
-}
-function decrement() {
-  if (mins > 0) {
-    mins--;
-    this.document.getElementById("display").innerHTML = mins + " minutes";
-  }
-}
-function start() {
-  function timer(seconds){
-  
-    setInterval(function(){
-      if(seconds<=0){
-      return
-    }
-      seconds--;
-      console.log(seconds+"seconds")
-      this.document.getElementById("display").innerHTML = Math.floor(seconds/(60*1000))+" mins "+(seconds%60*1000)/1000+ " secs"
-
-    }, 1000);
-  }
-  
-  timer(mins*60*1000)
-  
-  
-
-}
-()*/
 let countdown;
 
-let rememberedSeconds=0;
+let rememberedSeconds = 0;
 
 function timer(seconds) {
   clearInterval(countdown);
@@ -50,12 +12,12 @@ function timer(seconds) {
   countdown = setInterval(() => {
     const secondsLeft = (then - Date.now()) / 1000;
     rememberedSeconds = secondsLeft;
-    //check if shuld stop
+
     if (secondsLeft < 0) {
       clearInterval(countdown);
       return;
     }
-    //display
+
     displayTimeLeft(secondsLeft);
   }, 1000);
 }
@@ -76,7 +38,6 @@ function pause() {
 
     document.getElementById("display").innerHTML = "Paused";
 
-    
     clearInterval(countdown);
   } else {
     document.getElementById("pause").innerHTML = "Pause";
@@ -85,25 +46,24 @@ function pause() {
 }
 
 function start() {
-  if (rememberedSeconds<=0){
-    timer(25*60)
-  }else{
-    timer(rememberedSeconds)
+  if (rememberedSeconds <= 0) {
+    timer(25 * 60);
+  } else {
+    timer(rememberedSeconds);
   }
 }
 function decrement() {
-  if(rememberedSeconds-60>=0){
-    rememberedSeconds-=60;
+  if (rememberedSeconds - 60 >= 0) {
+    rememberedSeconds -= 60;
   }
-  start()
+  start();
 }
-function increment(){
-  rememberedSeconds+=60;
-  start()
+function increment() {
+  rememberedSeconds += 60;
+  start();
 }
-function start25(){
-  timer(60*25)
+function start25() {
+  timer(60 * 25);
 }
-
 
 timer(25 * 60);
