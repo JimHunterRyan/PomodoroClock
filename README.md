@@ -7,10 +7,10 @@ A 25 minute study timer in vanilla js
 
 ## Instructions
 
-Click the plus sign to add a minute
-Click the minus sign to subtract a minute
-Click pause to pause the clock
-Click 25 to start a new 25 minute timer
+Click the plus sign to add a minute  
+Click the minus sign to subtract a minute  
+Click pause to pause the clock  
+Click 25 to start a new 25 minute timer  
 
 
 ## Built With
